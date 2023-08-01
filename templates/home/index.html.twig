@@ -1,0 +1,22 @@
+{% extends 'baseHF.html.twig' %}
+
+
+{% block body %}
+<div style="height:300px;">
+    <br>
+    <br>
+    <br>
+    <h1>Bienvenu sur la page d'accueil !</h1>
+
+        Là c'est la banière.
+        En dessous, les "cards" des projets.
+        Oui c'est moche, mais on fait pas du front, sorry.
+    <br>
+    <br>
+
+</div>
+    {% include '/projects/index.html.twig' with {projects: projects}  %}
+</div>
+
+{% endblock %}
+

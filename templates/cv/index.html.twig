@@ -1,0 +1,28 @@
+{% extends 'baseHF.html.twig' %}
+
+{% block title %}Hello CvController!{% endblock %}
+
+{% block body %}
+<h1>CV</h1>
+
+
+<div>
+    <br>
+    <div>
+        <h2>Expériences</h2>
+        {% include '/experiences/index.html.twig' with {experience: 'experience'}  %}
+    </div>
+    
+    <br>
+    <div>
+        <h2>Etudes</h2>
+        {% include '/training/index.html.twig' with {training: 'training'}  %}
+    </div>
+    
+    <br>
+    <div>
+        <h2>Autres</h2>
+        {% include '/other/index.html.twig' with {other: 'other'}  %}
+    </div>
+</div>
+{% endblock %}

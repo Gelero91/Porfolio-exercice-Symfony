@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training index{% endblock %}
+
+{% block body %}
+<div style="display: flex; flex-wrap: wrap; flex-direction : column; gap: 20px;">
+
+        {% for training in trainings %}
+    <div  style="flex: 1 0; width: auto; height:100px; border: 1px solid #ccc; border-radius: 8px; padding: 20px;">
+            <p>{{ training.Name }}</p>
+            <p>{{ training.Date }}</p>
+            <p>{{ training.Description }}</p>
+            <br>
+            
+            <!-- Mettre condition Adminsitrateur -->
+            <td>
+                <a href="{{ path('app_training_show', {'id': training.id}) }}">show</a>
+                <a href="{{ path('app_training_edit', {'id': training.id}) }}">edit</a>
+            </td>
+    </div>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+<div>
+
+
+</div>
+
+    <!-- Mettre condition Adminsitrateur -->
+    <a href="{{ path('app_training_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Other index{% endblock %}
+
+{% block body %}
+<div style="display: flex; flex-wrap: wrap; flex-direction : column; gap: 20px;">
+
+        {% for other in others %}
+    <div  style="flex: 1 0; width: auto; height:100px; border: 1px solid #ccc; border-radius: 8px; padding: 20px;">
+                <p>{{ other.Name }}</p>
+                <p>{{ other.Date }}</p>
+                <p>{{ other.Description }}</p>
+
+                <!-- Mettre condition Adminsitrateur -->
+                <td>
+                    <a href="{{ path('app_experiences_show', {'id': other.id}) }}">show</a>
+                    <a href="{{ path('app_experiences_edit', {'id': other.id}) }}">edit</a>
+                </td>
+    </div>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+</div>
+    
+    <!-- Mettre condition Adminsitrateur -->
+    <a href="{{ path('app_other_new') }}">Create new</a>
+{% endblock %}

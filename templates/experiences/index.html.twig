@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Expériences{% endblock %}
+
+{% block body %}
+    <div style="display: flex; flex-wrap: wrap; flex-direction : column; gap: 20px;">
+            {% for experience in experiences %}
+            <div  style="flex: 1 0; width: auto; height:100px; border: 1px solid #ccc; border-radius: 8px; padding: 20px;">
+                <p style="border-right:30px">{{ experience.nom }}</p><p style="border-right:30px">{{ experience.date }}</p>
+                <p style="border-right:30px">{{ experience.description }}</p>
+                <br>
+
+                <td>
+                <!-- Mettre condition Adminsitrateur -->
+                    <a href="{{ path('app_experiences_show', {'id': experience.id}) }}">show</a>
+                    <a href="{{ path('app_experiences_edit', {'id': experience.id}) }}">edit</a>
+                </td>
+            </div>
+
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+    </div>
+
+    <!-- Mettre condition Adminsitrateur -->
+    <a href="{{ path('app_experiences_new') }}">Create new</a>
+{% endblock %}

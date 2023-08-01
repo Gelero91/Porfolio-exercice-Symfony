@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projects index{% endblock %}
+
+{% block body %}
+<H2>Les projets :</h2><br>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        {% for project in projects %}
+            <div style="flex: 1 0;height:150px; width: 800px; margin:10px; border: 1px solid #ccc; border-radius: 8px; padding: 20px;">
+                <p>ID: {{ project.id }}</p>
+                <p>Nom: {{ project.name }}</p>
+                <p>Type: {{ project.type }}</p>
+                <p>Description: {{ project.description }}</p>
+                    <a href="{{ path('app_projects_show', {'id': project.id}) }}">show</a>
+                    <a href="{{ path('app_projects_edit', {'id': project.id}) }}">edit</a>
+            </div>
+        {% else %}
+            <h1>AUCUN PROJET</h1>
+        {% endfor %}
+        </div>
+
+    <a href="{{ path('app_projects_new') }}">Create new</a>
+
+{% endblock %}
