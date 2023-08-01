@@ -11,17 +11,19 @@
 .block {
     height:515px;
     }
+
+    
 </style>
 
 <div class="block">
-
+<br>
     <h1>Login</h1>
 
-        <form action="{{ path('app_login') }}" method="post">
-            <label for="username">Email:</label>
+        <form action="{{ path('app_login') }}" method="post"><br>
+            <label for="username" style="width:300px;">Email:</label><br>
             <input type="text" id="username" name="_username" value="{{ last_username }}">
             <br><br>
-            <label for="password">Password:</label>
+            <label for="password">Password:</label><br>
             <input type="password" id="password" name="_password">
             <br><br>
 
@@ -30,5 +32,9 @@
 
             <button type="submit">login</button>
         </form>
+<br>
+<br>
+    <a class="link" href={{ path('app_register') }}>S'enregistrer</a>
+    <a class="link" href={{ path('app_forgot_password_request') }}>Mot de passe oublié ?</a>
 </div>
 {% endblock %}

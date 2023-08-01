@@ -12,10 +12,12 @@
                 <p>{{ other.Description }}</p>
 
                 <!-- Mettre condition Adminsitrateur -->
+                {#
                 <td>
                     <a href="{{ path('app_experiences_show', {'id': other.id}) }}">show</a>
                     <a href="{{ path('app_experiences_edit', {'id': other.id}) }}">edit</a>
                 </td>
+                #}
     </div>
         {% else %}
             <tr>
@@ -25,5 +27,8 @@
 </div>
     
     <!-- Mettre condition Adminsitrateur -->
+
+    {#
     <a href="{{ path('app_other_new') }}">Create new</a>
+    #}
 {% endblock %}

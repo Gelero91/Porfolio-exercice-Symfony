@@ -11,9 +11,9 @@
                 <br>
 
                 <td>
-                <!-- Mettre condition Adminsitrateur -->
+                <!-- Mettre condition Adminsitrateur -->{#
                     <a href="{{ path('app_experiences_show', {'id': experience.id}) }}">show</a>
-                    <a href="{{ path('app_experiences_edit', {'id': experience.id}) }}">edit</a>
+                    <a href="{{ path('app_experiences_edit', {'id': experience.id}) }}">edit</a>#}
                 </td>
             </div>
 
@@ -24,6 +24,6 @@
         {% endfor %}
     </div>
 
-    <!-- Mettre condition Adminsitrateur -->
-    <a href="{{ path('app_experiences_new') }}">Create new</a>
+    <!-- Mettre condition Adminsitrateur -->{#
+    <a href="{{ path('app_experiences_new') }}">Create new</a>#}
 {% endblock %}

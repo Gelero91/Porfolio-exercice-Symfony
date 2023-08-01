@@ -13,7 +13,7 @@
         display:flex; 
         align-items:center;
         flex-direction:row;
-        justify-content: center;
+        justify-content: right;
         }
 
         .link {
@@ -25,12 +25,19 @@
 <div class="headwrapper">
     <a class="link" href={{ path('app_home') }}>Home</a>
     <a class="link" href={{ path('app_cv') }}>CV</a>
-    <a class="link" href={{ path('app_login') }}>Login</a>
-    <a class="link" href={{ path('app_logout') }}>Logout</a>
+
+
+    {% if app.user %}
+        <a class="link" href={{ path('app_logout') }}>Logout</a>
+    {% else %}
+        <a class="link" href={{ path('app_login') }}>Login</a>
+    {% endif %}
+<!--
     <a class="link" href={{ path('app_register') }}>Register</a>
-    <a class="link" href={{ path('app_forgot_password_request') }}>Reset Password</a
+    <a class="link" href={{ path('app_forgot_password_request') }}>Reset Password</a>
     <a class="link" >Users</a>
     <a class="link" >Dasboard</a>
+-->
 </div>
 
 {% endblock %}
